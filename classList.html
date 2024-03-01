@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classlist</title>
+    <!-- <script src="//code.tidio.co/2hkhztfgimarggcudebbmsehuzfy8fof.js" async></script> -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/706f90924a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="input-group mb-3">
+            <input id="transform" type="password" class="form-control" placeholder="Enter password" aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">
+                <i class="fa-regular fa-eye-slash" id="eyesClosed"></i>
+            </span>
+        </div>
+    </div>
+
+
+<script>
+    let cursor = document.querySelector('#basic-addon2');
+    let eyesClosed = document.querySelector('#eyesClosed');
+    let transform = document.querySelector('#transform');
+    
+// change cursor to pointer
+    cursor.addEventListener('mouseover', () => {
+        cursor.style.cursor = "pointer";
+    });
+
+// to switch the icons
+    cursor.addEventListener('click', () => {
+        if(eyesClosed.classList.contains('fa-eye-slash')){
+            eyesClosed.classList.remove('fa-eye-slash');
+            eyesClosed.classList.add('fa-eye');
+            transform.type = "text";
+        }else{
+            eyesClosed.classList.remove('fa-eye');
+            eyesClosed.classList.add('fa-eye-slash');
+            transform.type = "password";
+        }
+    });
+
+
+</script>
+
+<script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <!-- <script src="//code.tidio.co/2hkhztfgimarggcudebbmsehuzfy8fof.js" async></script> -->
+</head>
+
+<body>
+
+    <input type="email" name="email" id="email" placeholder="@example.com">
+    <br><br>
+    <input type="password" name="password" id="password">
+
+    <input type="submit" value="Submit" id="btn">
+
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="error"></p>
+
+    <script>
+        let btnSubmit = document.querySelector('#btn');
+        let errMsg = document.querySelector('#error');
+        let msg1 = document.querySelector('#msg1');
+        let msg2 = document.querySelector('#msg2');
+
+
+        btnSubmit.addEventListener('click', () => {
+            let email = document.querySelector('#email').value;
+            let pwd = document.querySelector('#password').value;
+
+            errMsg.style.color = "red";
+            errMsg.style.fontSize = "10px";
+
+            if(email == "" || pwd == ""){
+                errMsg.innerText = "This field cannot be empty!";
+                msg1.innerText = ""
+                msg2.innerText = ""
+            }
+            if(email == "" && pwd == ""){
+                errMsg.innerText = "Both fields cannot be empty!";
+                msg1.innerText = ""
+                msg2.innerText = ""
+            }
+            if(email != "" && pwd != ""){
+                msg1.innerText = "Your Email Address is : " + email;
+                msg2.innerText = "Your Password is : " + pwd;
+                errMsg.innerText = "";
+            }
+
+
+
+
+
+
+
+            // if(email.innerText == ""){
+            //     msg1.style.display = "none";
+            //     msg2.style.display = "none";
+            //     errMsg.style.color = "red"
+            //     errMsg.innerText = "Fields are empty"
+            // }
+
+
+
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

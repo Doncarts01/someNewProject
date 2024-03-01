@@ -1,0 +1,18 @@
+.main{
+    width: 50%;
+    margin: auto;
+}
+button{
+    padding: 10px;
+    border-radius: 4px;
+    border: 0;
+    background-color: tomato;
+    color: white;
+}
+
+#result{
+    text-align: center;
+}
+span{
+    font-size: 40px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classlist</title>
+    <!-- <script src="//code.tidio.co/2hkhztfgimarggcudebbmsehuzfy8fof.js" async></script> -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/706f90924a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="input-group mb-3">
+            <input id="url" type="url" class="form-control" aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+        </div>
+        <button type="submit" id="btn" class="btn btn-success">Add URL</button>
+        <ul id="result"></ul>
+    </div>
+
+
+    <script>
+        let res = document.querySelector('#result');
+        const btn = document.querySelector('#btn');
+        let userInput = document.querySelector('#url');
+
+        let arr = [];
+
+        btn.addEventListener('click', () => {
+            arr.push(userInput.value);
+            userInput.value = "";
+            render();
+        });
+
+        function render(){
+            let listItems = "";
+            for(let i = 0; i < arr.length; i++){
+                listItems += `<li> 
+                        <a href='${arr[i]}' target='_blank'> ${arr[i]} 
+                        </a>
+                    </li>`;
+            }
+            res.innerHTML = listItems;
+        }
+
+    </script>
+
+    <script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

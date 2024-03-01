@@ -1,0 +1,11 @@
+button{
+    padding: 10px;
+    border-radius: 4px;
+    border: 0;
+    background-color: tomato;
+    color: white;
+}
+
+.error{
+    color: red;
+}
